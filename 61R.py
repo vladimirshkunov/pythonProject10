@@ -1,9 +1,11 @@
 from sys import setrecursionlimit
+from functools import lru_cache
 
-setrecursionlimit(3000)
+setrecursionlimit(100000)
 
 
 def primedevisors(n):
+    @lru_cache(maxsize=None)
     def devisors(x, d=2):
         if x == 1:
             return
