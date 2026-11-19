@@ -24,3 +24,13 @@ def primedevisors(n):
 
 n = int(input())
 primedevisors(n)
+
+"""
+d = 2
+while n > 1:
+    if n % d == 0:
+        print(d, end=" ")
+        n //= d
+    else:
+        d += 1
+"""
