@@ -1,6 +1,11 @@
 def primedivisors(n, d=2):
+    k = 0
     if n == 1:  # базовый случай: разложение закончено
-        return
+        if k == 0:
+            return 1
+        else:
+            return 1
+    k += 1
     if n % d == 0:  # d делит n — это простой сомножитель
         print(d, end=" ")  # печатаем его
         primedivisors(n // d, d)  # продолжаем с оставшейся частью
