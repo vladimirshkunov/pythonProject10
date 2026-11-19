@@ -1,18 +1,24 @@
-def primedivisors(n, d=2):
-    k = 0
-    if n == 1:  # базовый случай: разложение закончено
-        if k == 0:
-            return 1
+from sys import setrecursionlimit
+
+setrecursionlimit(3000)
+
+
+def primedevisors(n):
+    def devisors(x, d=2):
+        if x == 1:
+            return
+        if x % d == 0:  # d делит n — это простой сомножитель
+            print(d, end=" ")  # печатаем его
+            devisors(x // d, d)  # продолжаем с оставшейся частью
         else:
-            return 1
-    k += 1
-    if n % d == 0:  # d делит n — это простой сомножитель
-        print(d, end=" ")  # печатаем его
-        primedivisors(n // d, d)  # продолжаем с оставшейся частью
+            devisors(x, d + 1)  # пробуем следующий делитель
+
+    if n == 1:
+        print(1)
+        return
     else:
-        primedivisors(n, d + 1)  # пробуем следующий делитель
+        return devisors(n)
 
 
-N = int(input())
-primedivisors(N)
-print()
+n = int(input())
+primedevisors(n)
