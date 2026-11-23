@@ -1,8 +1,7 @@
-n = int(input())
-d = 2
-while n > 1:
-    if n % d == 0:
-        print(d, end=" ")
-        n //= d
-    else:
-        d += 1
+w1 = "tail"
+w2 = "head"
+s = "Bobtail has a tail."
+punct = " .,:;!?"
+for p in punct:
+    s1 = s.replace(' ' + w1 + p, ' ' + w2 + p)
+    print(s1)
