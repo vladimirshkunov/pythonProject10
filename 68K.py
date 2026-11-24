@@ -1,6 +1,6 @@
 Fin = open("input.txt")
 Fout = open("output.txt", "w+")
-n = 0
+
 lst = Fin.readlines()
 k = int(lst[0])
 members = []
